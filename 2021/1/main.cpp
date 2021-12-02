@@ -1,7 +1,6 @@
 #include <deque>
 #include <fstream>
 #include <iostream>
-#include <string>
 
 int main() {
 	int data;
