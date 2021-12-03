@@ -16,6 +16,7 @@ int main() {
 	while (file >> data) {
 		nums.push_back(data);
 	}
+	file.close();
 
 	int increases = 0;
 	for (std::deque<int>::size_type i = 0; i < nums.size(); ++i) {
