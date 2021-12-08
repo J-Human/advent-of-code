@@ -1,6 +1,7 @@
-#include <deque>
 #include <fstream>
 #include <iostream>
+#include <string>
+#include <vector>
 
 int main() {
 	std::string data;
@@ -12,8 +13,8 @@ int main() {
 		return 1;
 	}
 
-	std::deque<int> zero(12, 0);
-	std::deque<int> one(12, 0);
+	std::vector<int> zero(12, 0);
+	std::vector<int> one(12, 0);
 	while (std::getline(file, data)) {
 		for (int i = 0; i < data.size(); ++i) {
 			if (data[i] == '0') {

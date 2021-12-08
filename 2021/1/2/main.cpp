@@ -1,6 +1,6 @@
-#include <deque>
 #include <fstream>
 #include <iostream>
+#include <vector>
 
 int main() {
 	int data;
@@ -12,14 +12,12 @@ int main() {
 		return 1;
 	}
 
-	std::deque<int> nums;
-	while (file >> data) {
-		nums.push_back(data);
-	}
+	std::vector<int> nums;
+	while (file >> data) nums.push_back(data);
 	file.close();
 
 	int increases = 0;
-	for (std::deque<int>::size_type i = 3; i < nums.size(); ++i) {
+	for (std::vector<int>::size_type i = 3; i < nums.size(); ++i) {
 		if (nums[i] > nums[i - 3]) increases++;
 	}
 

@@ -1,9 +1,9 @@
 #include <cmath>
-#include <deque>
 #include <fstream>
 #include <iostream>
 #include <sstream>
 #include <string>
+#include <vector>
 
 int main() {
 	std::string data;
@@ -15,7 +15,7 @@ int main() {
 		return 1;
 	}
 
-	std::deque<int> nums;
+	std::vector<int> nums;
 	while (file >> data) {
 		std::stringstream ss(data);
 		while (std::getline(ss, data, ',')) nums.push_back(std::stoi(data));
@@ -23,7 +23,7 @@ int main() {
 	file.close();
 
 	std::sort(nums.begin(), nums.end());
-	std::deque<int> candidates;
+	std::vector<int> candidates;
 	for (int &num : nums) {
 		int tmp = 0;
 		for (const int &position : nums) {
