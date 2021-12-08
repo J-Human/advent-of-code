@@ -27,11 +27,11 @@ int main() {
 	for (int &num : nums) {
 		int tmp = 0;
 		for (const int &position : nums) {
-			tmp += (std::abs(num - position) * (std::abs(num - position) + 1)) / 2;
+			tmp += std::floor(std::abs(num - position) * (std::abs(num - position) + 1) / 2);
 		}
 		candidates.push_back(tmp);
 	}
 
 	std::sort(candidates.begin(), candidates.end());
-	std::cout << candidates[0] - 2 << std::endl;
+	std::cout << candidates[0] << std::endl;
 }
