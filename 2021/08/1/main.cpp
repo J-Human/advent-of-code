@@ -9,7 +9,7 @@ int main() {
 	std::string data;
 	std::ifstream file;
 
-	file.open("2021/8/input.txt");
+	file.open("2021/08/input.txt");
 	if (!file) {
 		std::cerr << "Failed to open input file." << std::endl;
 		return 1;

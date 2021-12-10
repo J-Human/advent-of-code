@@ -25,7 +25,7 @@ int main() {
 	std::string data;
 	std::ifstream file;
 
-	file.open("2021/3/input.txt");
+	file.open("2021/03/input.txt");
 	if (!file) {
 		std::cerr << "Failed to open input file." << std::endl;
 		return 1;

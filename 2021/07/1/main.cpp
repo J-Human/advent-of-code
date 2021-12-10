@@ -9,7 +9,7 @@ int main() {
 	std::string data;
 	std::ifstream file;
 
-	file.open("2021/7/input.txt");
+	file.open("2021/07/input.txt");
 	if (!file) {
 		std::cerr << "Failed to open input file." << std::endl;
 		return 1;
@@ -27,7 +27,7 @@ int main() {
 	for (int &num : nums) {
 		int tmp = 0;
 		for (const int &position : nums) {
-			tmp += std::floor(std::abs(num - position) * (std::abs(num - position) + 1) / 2);
+			tmp += std::abs(num - position);
 		}
 		candidates.push_back(tmp);
 	}

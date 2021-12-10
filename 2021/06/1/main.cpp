@@ -1,4 +1,3 @@
-#include <cmath>
 #include <fstream>
 #include <iostream>
 #include <sstream>
@@ -9,7 +8,7 @@ int main() {
 	std::string data;
 	std::ifstream file;
 
-	file.open("2021/7/input.txt");
+	file.open("2021/06/input.txt");
 	if (!file) {
 		std::cerr << "Failed to open input file." << std::endl;
 		return 1;
@@ -22,16 +21,19 @@ int main() {
 	}
 	file.close();
 
-	std::sort(nums.begin(), nums.end());
-	std::vector<int> candidates;
-	for (int &num : nums) {
-		int tmp = 0;
-		for (const int &position : nums) {
-			tmp += std::abs(num - position);
+	for (int i = 0; i < 80; ++i) {
+		std::vector<int> new_nums;
+
+		for (int j = 0; j < nums.size(); ++j) {
+			if (nums[j] == 0) {
+				nums[j] = 6;
+				new_nums.push_back(8);
+				continue;
+			}
+			--nums[j];
 		}
-		candidates.push_back(tmp);
+		for (int &new_fish : new_nums) nums.push_back(new_fish);
 	}
 
-	std::sort(candidates.begin(), candidates.end());
-	std::cout << candidates[0] << std::endl;
+	std::cout << nums.size() << std::endl;
 }
