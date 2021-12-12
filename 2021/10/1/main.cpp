@@ -18,8 +18,8 @@ int main() {
 	while (std::getline(file, data)) lines.push_back(data);
 	file.close();
 
-	std::map<char, char> grouping_symbols = { { '(', ')' }, { '{', '}' }, { '[', ']' }, { '<', '>' } };
-	std::map<char, int> points_per_symbol = { { ')', 3 }, { '}', 1197 }, { ']', 57 }, { '>', 25137 } };
+	std::map<char, char> grouping_symbols = {{'(', ')'}, {'{', '}'}, {'[', ']'}, {'<', '>'}};
+	std::map<char, int> points_per_symbol = {{')', 3}, {'}', 1197}, {']', 57}, {'>', 25137}};
 
 	int total_points = 0;
 	for (std::string &line : lines) {
