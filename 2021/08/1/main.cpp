@@ -19,7 +19,7 @@ int main() {
 	while (std::getline(file, data)) {
 		std::vector<std::string> sides = strutil::split(data, " | ");
 		std::vector<std::string> chars = strutil::split(sides.back(), " ");
-		for (std::string &v : chars)
+		for (const std::string &v : chars)
 			if (v.size() <= 4 || v.size() == 7) count++;
 	}
 	file.close();

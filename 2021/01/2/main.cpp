@@ -17,9 +17,8 @@ int main() {
 	file.close();
 
 	int increases = 0;
-	for (std::vector<int>::size_type i = 3; i < nums.size(); ++i) {
-		if (nums[i] > nums[i - 3]) increases++;
-	}
+	for (std::vector<int>::size_type i = 3; i < nums.size(); ++i)
+		if (nums[i] > nums[i - 3]) ++increases;
 
 	std::cout << increases << std::endl;
 }

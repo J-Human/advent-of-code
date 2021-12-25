@@ -22,17 +22,17 @@ int main() {
 	file.close();
 
 	for (int i = 0; i < 80; ++i) {
-		std::vector<int> new_nums;
+		std::vector<int> new_fishes;
 
-		for (int j = 0; j < nums.size(); ++j) {
+		for (std::vector<int>::size_type j = 0; j < nums.size(); ++j) {
 			if (nums[j] == 0) {
 				nums[j] = 6;
-				new_nums.push_back(8);
+				new_fishes.push_back(8);
 				continue;
 			}
 			--nums[j];
 		}
-		for (int &new_fish : new_nums) nums.push_back(new_fish);
+		for (const int &new_fish : new_fishes) nums.push_back(new_fish);
 	}
 
 	std::cout << nums.size() << std::endl;

@@ -3,7 +3,7 @@
 #include <string>
 #include <vector>
 
-int get_rate(const std::vector<std::string> &binaries, const std::string &type) {
+static int get_rate(std::vector<std::string> binaries, const std::string &type) {
 	std::vector<std::string> matches(binaries);
 	std::vector<std::string> ones, zeros;
 	int current = 0;
@@ -15,7 +15,7 @@ int get_rate(const std::vector<std::string> &binaries, const std::string &type) 
 
 		zeros.clear();
 		ones.clear();
-		current++;
+		++current;
 	}
 
 	return std::stoi(matches.front(), 0, 2);
@@ -32,9 +32,7 @@ int main() {
 	}
 
 	std::vector<std::string> nums;
-	while (std::getline(file, data)) {
-		nums.push_back(data);
-	}
+	while (std::getline(file, data)) nums.push_back(data);
 	file.close();
 
 	std::cout << get_rate(nums, "oxygen") * get_rate(nums, "co2") << std::endl;

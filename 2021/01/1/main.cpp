@@ -18,8 +18,11 @@ int main() {
 
 	int increases = 0;
 	for (std::vector<int>::size_type i = 0; i < nums.size(); ++i) {
-		if (i == 0) continue;
-		if (nums[i] > nums[i - 1]) increases++;
+		if (i == 0) {
+			continue;
+		} else if (nums[i] > nums[i - 1]) {
+			++increases;
+		}
 	}
 
 	std::cout << increases << std::endl;

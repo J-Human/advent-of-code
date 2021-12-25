@@ -24,14 +24,12 @@ int main() {
 
 	std::sort(nums.begin(), nums.end());
 	std::vector<int> candidates;
-	for (int &num : nums) {
+	for (const int &num : nums) {
 		int tmp = 0;
-		for (const int &position : nums) {
-			tmp += std::abs(num - position);
-		}
+		for (const int &position : nums) tmp += std::abs(num - position);
 		candidates.push_back(tmp);
 	}
 
 	std::sort(candidates.begin(), candidates.end());
-	std::cout << candidates[0] << std::endl;
+	std::cout << candidates.front() << std::endl;
 }

@@ -13,20 +13,19 @@ int main() {
 		return 1;
 	}
 
-	std::vector<int> zero(12, 0);
-	std::vector<int> one(12, 0);
+	std::vector<int> zero(12, 0), one(12, 0);
 	while (std::getline(file, data)) {
-		for (int i = 0; i < data.size(); ++i) {
+		for (std::basic_string<char>::size_type i = 0; i < data.size(); ++i) {
 			if (data[i] == '0') {
-				zero[i]++;
+				++zero[i];
 			} else {
-				one[i]++;
+				++one[i];
 			}
 		}
 	}
 	file.close();
 
-	std::string gamma = "", epsilon = "";
+	std::string gamma, epsilon;
 	for (int i = 0; i < 12; ++i) {
 		if (zero[i] > one[i]) {
 			gamma += "1";
