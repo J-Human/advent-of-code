@@ -6,7 +6,7 @@ with open(os.path.dirname(__file__) + "/../input.txt") as file:
 	stacks = { x: [] for x in range(1, int(layout[-1].strip()[-1]) + 1) }
 
 	for row in layout[:-1]:
-		for index, crate in enumerate(list(" " * 3 + row)[::4][1:]):
+		for index, crate in enumerate((" " * 3 + row)[::4][1:]):
 			if crate == " ":
 				continue
 
